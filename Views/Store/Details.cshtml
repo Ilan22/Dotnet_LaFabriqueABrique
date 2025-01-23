@@ -1,34 +1,74 @@
 ﻿@model LaFabriqueaBriques.Models.Lego
 
-<h2>Détails du Lego</h2>
-
-<div class="card">
-    <div class="card-header">
-        <h3>@Model.Name</h3>
+<div class="lego-container">
+    <div class="lego-header">
+        <h2 class="lego-title mb-0">@Model.Name</h2>
+        <div class="lego-header-buttons">
+            <a asp-action="Index" asp-controller="Home" class="lego-button">
+                <i class="fas fa-arrow-left"></i> Retour à la liste
+            </a>
+            <form asp-action="AddToCart" asp-controller="Store" method="post">
+                <input type="hidden" name="legoId" value="@Model.Id" />
+                <button type="submit" class="lego-button cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
+            </form>
+        </div>
     </div>
-    <div class="card-body">
-        <p><strong>Description :</strong> @Model.Description</p>
-        <p><strong>Prix :</strong> @Model.Price €</p>
-        <p><strong>Âge recommandé :</strong> @Model.Age ans</p>
-        <p><strong>Nombre de pièces :</strong> @Model.NbPiece pièces</p>
 
+    <div class="lego-details">
         @if (Model.ImageUrls != null && Model.ImageUrls.Any())
         {
-        <div class="row">
-            @foreach (var imageUrl in Model.ImageUrls)
-                {
-            <div class="col-md-4 mb-3">
-                <img src="@imageUrl" class="img-fluid" alt="Image Lego" />
+            <div class="lego-gallery">
+                <div class="lego-thumbnails">
+                    @foreach (var imageUrl in Model.ImageUrls)
+                    {
+                        <div class="thumbnail-container" onclick="changeMainImage('@imageUrl')">
+                            <img src="@imageUrl" class="thumbnail-image" alt="Miniature LEGO" />
+                        </div>
+                    }
+                </div>
+                <div class="lego-main-image">
+                    <img src="@Model.ImageUrls.First()" id="mainImage" alt="Image principale LEGO" />
+                </div>
             </div>
-                }
-        </div>
         }
-    </div>
-    <div class="card-footer">
-        <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Retour à la liste</a>
-        <form asp-action="AddToCart" asp-controller="Store" method="post">
-            <input type="hidden" name="legoId" value="@Model.Id" />
-            <button type="submit" class="btn btn-primary">Ajouter au panier</button>
-        </form>
+
+        <div class="lego-info">
+            <div class="lego-description">
+                <h3><i class="fas fa-info-circle"></i> Description</h3>
+                <p>@Model.Description</p>
+            </div>
+
+            <div class="lego-specs-details">
+                <div class="spec-item">
+                    <i class="fas fa-coins"></i>
+                    <span class="spec-label">Prix :</span>
+                    <span class="spec-value">@Model.Price €</span>
+                </div>
+
+                <div class="spec-item">
+                    <i class="fas fa-child"></i>
+                    <span class="spec-label">Âge recommandé :</span>
+                    <span class="spec-value">@Model.Age ans</span>
+                </div>
+
+                <div class="spec-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span class="spec-label">Nombre de pièces :</span>
+                    <span class="spec-value">@Model.NbPiece pièces</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+</div>
+
+<script>
+    function changeMainImage(imageUrl) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageUrl;
+        mainImage.style.opacity = '0';
+        setTimeout(() => {
+            mainImage.style.opacity = '1';
+        }, 100);
+    }
+</script>

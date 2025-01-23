@@ -3,33 +3,25 @@
 }
 
 @model IEnumerable<LaFabriqueaBriques.Models.Lego>
-<h2>Store</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nom</th>
-            <th>Description</th>
-            <th>Prix</th>
-            <th>Âge</th>
-            <th>Nombre de pièces</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="lego-container">
+    <h2 class="lego-title">Nos Sets LEGO</h2>
+    <div class="lego-grid">
         @foreach (var lego in Model)
         {
-            <tr>
-                <td>@lego.Id</td>
-                <td>@lego.Name</td>
-                <td>@lego.Description</td>
-                <td>@lego.Price €</td>
-                <td>@lego.Age ans</td>
-                <td>@lego.NbPiece pièces</td>
-                <td>
-                    <a asp-controller="Store" asp-action="Details" asp-route-id="@lego.Id" class="btn btn-info btn-sm">Détails</a>
-                </td>
-            </tr>
+            <div class="lego-card">
+                <div class="lego-card-header">
+                    <h3>@lego.Name</h3>
+                </div>
+                <div class="lego-card-body">
+                    <p>@lego.Description</p>
+                    <div class="lego-specs">
+                        <span><i class="fas fa-coins"></i> @lego.Price €</span>
+                        <span><i class="fas fa-child"></i> @lego.Age ans</span>
+                        <span><i class="fas fa-puzzle-piece"></i> @lego.NbPiece pièces</span>
+                    </div>
+                    <a asp-controller="Store" asp-action="Details" asp-route-id="@lego.Id" class="lego-button">Voir les détails</a>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>
