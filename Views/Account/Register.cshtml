@@ -1,0 +1,18 @@
+﻿@model LaFabriqueaBriques.Models.User
+
+<h2>Inscription</h2>
+<form asp-action="Register" method="post">
+    <div>
+        <label for="Name">Nom</label>
+        <input type="text" asp-for="Name" />
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <input type="email" asp-for="Email" />
+    </div>
+    <div>
+        <label for="Password">Mot de passe</label>
+        <input type="password" asp-for="Password" />
+    </div>
+    <button type="submit">S'inscrire</button>
+</form>
