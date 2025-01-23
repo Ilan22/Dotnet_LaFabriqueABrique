@@ -3,7 +3,6 @@
 }
 
 @model IEnumerable<LaFabriqueaBriques.Models.Lego>
-
 <h2>Store</h2>
 <table class="table">
     <thead>
@@ -14,6 +13,7 @@
             <th>Prix</th>
             <th>Âge</th>
             <th>Nombre de pièces</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -23,9 +23,12 @@
                 <td>@lego.Id</td>
                 <td>@lego.Name</td>
                 <td>@lego.Description</td>
-                <td>@lego.Price</td>
-                <td>@lego.Age</td>
-                <td>@lego.NbPiece</td>
+                <td>@lego.Price €</td>
+                <td>@lego.Age ans</td>
+                <td>@lego.NbPiece pièces</td>
+                <td>
+                    <a asp-controller="Store" asp-action="Details" asp-route-id="@lego.Id" class="btn btn-info btn-sm">Détails</a>
+                </td>
             </tr>
         }
     </tbody>

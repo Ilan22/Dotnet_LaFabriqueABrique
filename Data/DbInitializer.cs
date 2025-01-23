@@ -5,6 +5,30 @@ public static class DbInitializer
     public static void Initialize(AppDbContext context)
     {
         context.Database.EnsureCreated();
+
+        if (context.Users.Any()) return;
+
+        var users = new List<User>
+       {
+           new User {
+               Name = "Admin",
+               Email = "admin@admin.com",
+               Password = "$2a$11$QcCj3y3MxknHOHtMNNBpZO1nPTciybEyj1HpwryTvA1AmGxNO3cWG",
+               Role = 1,
+               UserLegos = new List<UserLego>()
+           },
+           new User {
+               Name = "test",
+               Email = "test@test.com",
+               Password = "$2a$11$9MPMjPC2dLDFlmCKXDBnb.2Es/ghr65.oQRfgXPp/U2wMuPE.7Pne",
+               Role = 0,
+               UserLegos = new List<UserLego>()
+           }
+       };
+
+        context.Users.AddRange(users);
+        context.SaveChanges();
+
         if (context.Legos.Any()) return;
 
         var legos = new List<Lego>
