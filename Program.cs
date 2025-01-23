@@ -55,5 +55,10 @@ app.MapControllerRoute(
     pattern: "{controller=Admin}/CreateLego")
     .WithStaticAssets();
 
+app.MapControllerRoute(
+    name: "addToCart",
+    pattern: "{controller=Store}/AddToCart")
+    .WithStaticAssets();
+
 
 app.Run();

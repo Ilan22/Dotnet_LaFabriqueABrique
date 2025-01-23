@@ -10,5 +10,8 @@ namespace LaFabriqueaBriques.Models
         public string Password { get; set; } = string.Empty;
         public int Role { get; set; }
         public List<UserLego> UserLegos { get; set; }
+        public List<Lego> Cart { get; set; } = new List<Lego>();
+        public List<Order> Orders { get; set; } = new List<Order>();
+
     }
 }

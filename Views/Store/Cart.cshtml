@@ -1,0 +1,35 @@
+@model List<LaFabriqueaBriques.Models.Lego>
+
+    <h2>Mon Panier</h2>
+
+    @if (!Model.Any())
+{
+    <p>Votre panier est vide.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lego in Model)
+            {
+            <tr>
+                <td>@lego.Name</td>
+                <td>@lego.Description</td>
+                <td>@lego.Price €</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <p><strong>Total :</strong> @Model.Sum(l => l.Price) €</p>
+}
+    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Retour à la liste</a>
+<form asp-controller="Account" asp-action="ConfirmOrder" method="post">
+    <button type="submit" class="btn btn-success">Acheter</button>
+</form>

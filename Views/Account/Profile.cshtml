@@ -1,0 +1,28 @@
+﻿@model LaFabriqueaBriques.Models.User
+
+<h2>Profil de @Model.Name</h2>
+
+<h3>Vos commandes</h3>
+
+@if (Model.Orders != null && Model.Orders.Any())
+{
+    <ul>
+        @foreach (var order in Model.Orders)
+        {
+            <li>
+                <strong>Commande n°@order.Id</strong> - Date : @order.OrderDate <br />
+                Articles :
+                <ul>
+                    @foreach (var lego in order.Legos)
+                    {
+                        <li>@lego.Name - @lego.Price €</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Vous n'avez pas encore passé de commande.</p>
+}

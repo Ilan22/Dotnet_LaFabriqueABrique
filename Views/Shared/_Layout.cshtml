@@ -22,6 +22,9 @@
                 <a asp-controller="Admin" asp-action="Index">Admin</a>
             }
 
+            <a asp-controller="Account" asp-action="Profile" class="btn btn-primary">Mon Profil</a>
+            <a asp-controller="Store" asp-action="Cart" class="btn btn-primary">Mon Panier</a>
+
             <a asp-controller="Account" asp-action="Logout">Se déconnecter</a>
         }
         else
@@ -30,6 +33,7 @@
             <a asp-controller="Account" asp-action="Register">S'inscrire</a>
         }
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

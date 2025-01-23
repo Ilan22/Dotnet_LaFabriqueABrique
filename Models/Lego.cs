@@ -23,5 +23,6 @@ namespace LaFabriqueaBriques.Models
         public int Age { get; set; }
 
         public int NbPiece { get; set; }
+        public List<Order> Orders { get; set; } = new List<Order>();
     }
 }

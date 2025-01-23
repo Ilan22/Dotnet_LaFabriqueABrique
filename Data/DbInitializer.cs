@@ -13,14 +13,14 @@ public static class DbInitializer
            new User {
                Name = "Admin",
                Email = "admin@admin.com",
-               Password = "$2a$11$QcCj3y3MxknHOHtMNNBpZO1nPTciybEyj1HpwryTvA1AmGxNO3cWG",
+               Password = BCrypt.Net.BCrypt.HashPassword("admin"),
                Role = 1,
                UserLegos = new List<UserLego>()
            },
            new User {
                Name = "test",
                Email = "test@test.com",
-               Password = "$2a$11$9MPMjPC2dLDFlmCKXDBnb.2Es/ghr65.oQRfgXPp/U2wMuPE.7Pne",
+               Password = BCrypt.Net.BCrypt.HashPassword("test"),
                Role = 0,
                UserLegos = new List<UserLego>()
            }
