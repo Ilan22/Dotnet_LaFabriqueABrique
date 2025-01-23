@@ -11,9 +11,17 @@
 </head>
 <body>
     <header>
+        <a asp-controller="Home" asp-action="Index">Accueil</a>
+
         @if (User.Identity.IsAuthenticated)
         {
             <p>Bienvenue, @User.Identity.Name</p>
+
+            @if (User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "1")
+            {
+                <a asp-controller="Admin" asp-action="Index">Admin</a>
+            }
+
             <a asp-controller="Account" asp-action="Logout">Se déconnecter</a>
         }
         else

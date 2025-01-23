@@ -17,10 +17,17 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Lego>()
-            .HasOne(l => l.User)
-            .WithMany(u => u.Legos)
-            .HasForeignKey(l => l.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+        modelBuilder.Entity<UserLego>()
+            .HasKey(ul => new { ul.UserId, ul.LegoId });
+
+        modelBuilder.Entity<UserLego>()
+            .HasOne(ul => ul.User)
+            .WithMany(u => u.UserLegos)
+            .HasForeignKey(ul => ul.UserId);
+
+        //modelBuilder.Entity<UserLego>()
+        //    .HasOne(ul => ul.Lego)
+        //    .WithMany(l => l.UserLegos)
+        //    .HasForeignKey(ul => ul.LegoId);
     }
 }

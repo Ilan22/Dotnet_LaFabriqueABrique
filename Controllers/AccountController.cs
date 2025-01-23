@@ -32,6 +32,7 @@ namespace LaFabriqueaBriques.Controllers
 
             // Hashage du mot de passe (simple, utilisez des bibliothèques comme BCrypt en production)
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            user.Role = 1;
             _context.Users.Add(user);
             _context.SaveChanges();
 
@@ -59,7 +60,8 @@ namespace LaFabriqueaBriques.Controllers
             var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, user.Name),
-            new Claim(ClaimTypes.Email, user.Email)
+            new Claim(ClaimTypes.Email, user.Email),
+             new Claim("Role", user.Role.ToString())
         };
 
             var claimsIdentity = new ClaimsIdentity(claims, "CookieAuth");
