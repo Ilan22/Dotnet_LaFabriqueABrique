@@ -91,7 +91,7 @@ namespace LaFabriqueaBriques.Migrations
             modelBuilder.Entity("LaFabriqueaBriques.Models.UserLego", b =>
                 {
                     b.HasOne("LaFabriqueaBriques.Models.Lego", "Lego")
-                        .WithMany("UserLegos")
+                        .WithMany()
                         .HasForeignKey("LegoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -105,11 +105,6 @@ namespace LaFabriqueaBriques.Migrations
                     b.Navigation("Lego");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("LaFabriqueaBriques.Models.Lego", b =>
-                {
-                    b.Navigation("UserLegos");
                 });
 
             modelBuilder.Entity("LaFabriqueaBriques.Models.User", b =>

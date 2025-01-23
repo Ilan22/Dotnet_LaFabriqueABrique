@@ -14,6 +14,21 @@ builder.Services.AddAuthentication("CookieAuth")
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+        DbInitializer.Initialize(context);
+        Console.WriteLine("Données initialisées avec succès");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Erreur d'initialisation: {ex.Message}");
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
