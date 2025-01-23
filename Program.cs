@@ -35,5 +35,10 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+app.MapControllerRoute(
+    name: "createLego",
+    pattern: "{controller=Admin}/CreateLego")
+    .WithStaticAssets();
+
 
 app.Run();

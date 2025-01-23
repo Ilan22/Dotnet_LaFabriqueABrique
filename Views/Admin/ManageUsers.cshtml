@@ -1,0 +1,31 @@
+﻿@model LaFabriqueaBriques.Models.AdminUserViewModel
+<h2>Gestion des utilisateurs</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Rôle</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="ChangeRole" method="post">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <select name="role" class="form-control">
+                            <option value="0" selected="@(user.Role == 0)">Utilisateur</option>
+                            <option value="1" selected="@(user.Role == 1)">Administrateur</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-2">Appliquer</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
