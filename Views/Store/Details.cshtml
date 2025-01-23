@@ -14,17 +14,21 @@
 
         @if (Model.ImageUrls != null && Model.ImageUrls.Any())
         {
-            <div class="row">
-                @foreach (var imageUrl in Model.ImageUrls)
+        <div class="row">
+            @foreach (var imageUrl in Model.ImageUrls)
                 {
-                    <div class="col-md-4 mb-3">
-                        <img src="@imageUrl" class="img-fluid" alt="Image Lego" />
-                    </div>
-                }
+            <div class="col-md-4 mb-3">
+                <img src="@imageUrl" class="img-fluid" alt="Image Lego" />
             </div>
+                }
+        </div>
         }
     </div>
     <div class="card-footer">
         <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Retour à la liste</a>
+        <form asp-action="AddToCart" asp-controller="Store" method="post">
+            <input type="hidden" name="legoId" value="@Model.Id" />
+            <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+        </form>
     </div>
 </div>

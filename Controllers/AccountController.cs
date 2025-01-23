@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using LaFabriqueaBriques.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LaFabriqueaBriques.Controllers
 {
@@ -32,7 +33,7 @@ namespace LaFabriqueaBriques.Controllers
 
             // Hashage du mot de passe (simple, utilisez des bibliothèques comme BCrypt en production)
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-            user.Role = 1;
+            user.Role = 0;
             _context.Users.Add(user);
             _context.SaveChanges();
 
@@ -76,5 +77,53 @@ namespace LaFabriqueaBriques.Controllers
             HttpContext.SignOutAsync("CookieAuth");
             return RedirectToAction("Login");
         }
+
+        [HttpPost]
+        public IActionResult ConfirmOrder()
+        {
+            var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(userEmail))
+                return Unauthorized();
+
+            var user = _context.Users
+                .Include(u => u.Cart)
+                .FirstOrDefault(u => u.Email == userEmail);
+
+            if (user == null || !user.Cart.Any())
+                return RedirectToAction("Profile", "Account");
+
+            var order = new Order
+            {
+                UserId = user.Id,
+                Legos = new List<Lego>(user.Cart)
+            };
+
+            _context.Orders.Add(order);
+            user.Cart.Clear();
+            _context.SaveChanges();
+
+            return RedirectToAction("Profile", "Account");
+        }
+
+        public IActionResult Profile()
+        {
+            var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(userEmail))
+                return Unauthorized();
+
+            var user = _context.Users
+                .Include(u => u.Orders)
+                .ThenInclude(o => o.Legos)
+                .FirstOrDefault(u => u.Email == userEmail);
+
+            if (user == null)
+                return Unauthorized();
+
+            return View(user);
+        }
+
+
     }
 }
