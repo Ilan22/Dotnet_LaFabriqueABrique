@@ -22,8 +22,6 @@
             <div class="d-flex align-items-center">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <span class="user-welcome">Bienvenue, @User.Identity.Name</span>
-
                     @if (User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "1")
                     {
                         <a class="lego-button admin" asp-controller="Admin" asp-action="Index">Admin</a>

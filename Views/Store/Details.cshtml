@@ -7,10 +7,19 @@
             <a asp-action="Index" asp-controller="Home" class="lego-button">
                 <i class="fas fa-arrow-left"></i> Retour à la liste
             </a>
-            <form asp-action="AddToCart" asp-controller="Store" method="post">
-                <input type="hidden" name="legoId" value="@Model.Id" />
-                <button type="submit" class="lego-button cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
-            </form>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form asp-action="AddToCart" asp-controller="Store" method="post">
+                    <input type="hidden" name="legoId" value="@Model.Id" />
+                    <button type="submit" class="lego-button cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
+                </form>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="lego-button">
+                    <i class="fas fa-sign-in-alt"></i> Connectez-vous pour acheter
+                </a>
+            }
         </div>
     </div>
 

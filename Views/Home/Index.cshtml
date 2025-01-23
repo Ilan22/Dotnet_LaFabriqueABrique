@@ -3,8 +3,23 @@
 }
 
 @model IEnumerable<LaFabriqueaBriques.Models.Lego>
+
 <div class="lego-container">
     <h2 class="lego-title">Nos Sets LEGO</h2>
+    
+    <div class="filter-section">
+        <label for="sortCriteria">Trier par :</label>
+        <select id="sortCriteria" onchange="sortLegos(this.value)">
+            <option value="">Sélectionner...</option>
+            <option value="name-asc">Nom (A-Z)</option>
+            <option value="name-desc">Nom (Z-A)</option>
+            <option value="price-asc">Prix (croissant)</option>
+            <option value="price-desc">Prix (décroissant)</option>
+            <option value="pieces-asc">Nombre de pièces (croissant)</option>
+            <option value="pieces-desc">Nombre de pièces (décroissant)</option>
+        </select>
+    </div>
+
     <div class="lego-grid">
         @foreach (var lego in Model)
         {
@@ -13,7 +28,7 @@
                     <h3>@lego.Name</h3>
                 </div>
                 <div class="lego-card-body">
-                    <p>@lego.Description</p>
+                    <img src="@lego.ImageUrls[0]" alt="@lego.Name" class="lego-card-image" />
                     <div class="lego-specs">
                         <span><i class="fas fa-coins"></i> @lego.Price €</span>
                         <span><i class="fas fa-child"></i> @lego.Age ans</span>
@@ -25,3 +40,25 @@
         }
     </div>
 </div>
+
+<script>
+function sortLegos(criteria) {
+    const url = new URL(window.location);
+    url.searchParams.set('sort', criteria);
+    window.location.href = url;
+}
+</script>
+
+<style>
+.filter-section {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.filter-section select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+}
+</style>

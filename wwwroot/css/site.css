@@ -167,6 +167,16 @@ body {
 
 .lego-card-body {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lego-card-image {
+  height: 15em;
+  width: 15em;
+  object-fit: contain;
 }
 
 .lego-specs {
@@ -174,6 +184,7 @@ body {
   justify-content: space-between;
   margin: 1rem 0;
   font-size: 0.9rem;
+  width: 100%;
 }
 
 .lego-specs span {
