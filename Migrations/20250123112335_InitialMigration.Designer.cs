@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaFabriqueaBriques.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250123093157_AddPasswordToUser")]
-    partial class AddPasswordToUser
+    [Migration("20250123112335_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,12 +45,7 @@ namespace LaFabriqueaBriques.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Legos");
                 });
@@ -73,25 +68,51 @@ namespace LaFabriqueaBriques.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("LaFabriqueaBriques.Models.Lego", b =>
+            modelBuilder.Entity("LaFabriqueaBriques.Models.UserLego", b =>
                 {
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LegoId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("UserId", "LegoId");
+
+                    b.HasIndex("LegoId");
+
+                    b.ToTable("UserLego");
+                });
+
+            modelBuilder.Entity("LaFabriqueaBriques.Models.UserLego", b =>
+                {
+                    b.HasOne("LaFabriqueaBriques.Models.Lego", "Lego")
+                        .WithMany()
+                        .HasForeignKey("LegoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("LaFabriqueaBriques.Models.User", "User")
-                        .WithMany("Legos")
+                        .WithMany("UserLegos")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Lego");
 
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("LaFabriqueaBriques.Models.User", b =>
                 {
-                    b.Navigation("Legos");
+                    b.Navigation("UserLegos");
                 });
 #pragma warning restore 612, 618
         }
