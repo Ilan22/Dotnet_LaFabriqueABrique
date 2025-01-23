@@ -34,7 +34,7 @@ namespace LaFabriqueaBriques.Controllers
 
                 _context.Legos.Add(lego);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Store");
+                return RedirectToAction("Index", "Home");
             }
             return View(lego);
         }
