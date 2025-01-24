@@ -67,4 +67,9 @@ public class StoreController : Controller
 
         return View(user.Cart);
     }
+
+    public IActionResult Cancel()
+    {
+        return View();
+    }
 }

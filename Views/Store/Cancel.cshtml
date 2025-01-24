@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Paiement annulé";
+    Layout = "_Layout";
+}
+
+<div class="lego-container">
+    <div class="lego-header">
+        <h2 class="lego-title mb-0"><i class="fas fa-times-circle me-2"></i>Paiement annulé</h2>
+    </div>
+
+    <div class="">
+        <div class="lego-info text-center py-5">
+            <i class="fas fa-exclamation-circle fa-3x text-warning mb-3"></i>
+            <p class="lead">Votre paiement a été annulé.</p>
+            <p class="lead">Vous allez être redirigé à Votre panier dans 3 secondes.</p>
+            <div class="lego-header-buttons mt-4">
+                <a asp-controller="Store" asp-action="Cart" class="lego-button">
+                    <i class="fas fa-shopping-cart me-2"></i>Retourner au panier
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Redirection automatique après 3 secondes
+    setTimeout(function () {
+        window.location.href = '@Url.Action("Cart", "Store")';
+    }, 3000);
+</script>

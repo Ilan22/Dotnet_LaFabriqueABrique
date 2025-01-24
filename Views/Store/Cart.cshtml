@@ -2,27 +2,29 @@
     ViewData["Title"] = "Mon Panier";
 }
 
+@inject IConfiguration Configuration
 @model List<LaFabriqueaBriques.Models.Lego>
 
-<div class="container my-5">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h2 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Mon Panier</h2>
-        </div>
-        
-        <div class="card-body">
-            @if (!Model.Any())
-            {
-                <div class="text-center py-5">
-                    <i class="fas fa-shopping-basket fa-3x text-muted mb-3"></i>
-                    <p class="lead">Votre panier est vide.</p>
-                    <a asp-action="Index" asp-controller="Home" class="btn btn-primary">
-                        <i class="fas fa-arrow-left me-2"></i>Continuer mes achats
-                    </a>
-                </div>
-            }
-            else
-            {
+<div class="lego-container">
+    <div class="lego-header">
+        <h2 class="lego-title mb-0"><i class="fas fa-shopping-cart me-2"></i>Mon Panier</h2>
+    </div>
+
+    @* <div class="lego-details"> *@
+    <div class="">
+        @if (!Model.Any())
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-shopping-basket fa-3x text-muted mb-3"></i>
+                <p class="lead">Votre panier est vide.</p>
+                <a asp-action="Index" asp-controller="Home" class="lego-button">
+                    <i class="fas fa-arrow-left me-2"></i>Continuer mes achats
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="lego-info">
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead class="table-light">
@@ -30,6 +32,7 @@
                                 <th>Nom</th>
                                 <th>Description</th>
                                 <th class="text-end">Prix</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,6 +44,14 @@
                                     </td>
                                     <td class="align-middle">@lego.Description</td>
                                     <td class="align-middle text-end">@lego.Price.ToString("C")</td>
+                                    <td class="align-middle">
+                                        <form asp-controller="Cart" asp-action="Remove" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@lego.Id" />
+                                            <button type="submit" class="lego-button danger">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             }
                         </tbody>
@@ -48,22 +59,65 @@
                             <tr>
                                 <td colspan="2" class="text-end"><strong>Total :</strong></td>
                                 <td class="text-end"><strong>@Model.Sum(l => l.Price).ToString("C")</strong></td>
+                                <td></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center mt-4">
-                    <a asp-action="Index" asp-controller="Home" class="btn btn-outline-primary">
+                <div class="lego-header-buttons mt-4">
+                    <a asp-action="Index" asp-controller="Home" class="lego-button">
                         <i class="fas fa-arrow-left me-2"></i>Continuer mes achats
                     </a>
-                    <form asp-controller="Account" asp-action="ConfirmOrder" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-success">
-                            <i class="fas fa-check me-2"></i>Valider ma commande
-                        </button>
-                    </form>
+                    <button onclick="startCheckout()" class="lego-button cart">
+                        <i class="fas fa-check me-2"></i>Payer
+                    </button>
                 </div>
-            }
-        </div>
+            </div>
+        }
     </div>
 </div>
+
+@section Scripts {
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('@Configuration["Stripe:PublishableKey"]');
+
+        function startCheckout() {
+            // Afficher un indicateur de chargement
+            const payButton = document.querySelector('button.lego-button.cart');
+            payButton.disabled = true;
+            payButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Chargement...';
+
+            fetch('/Payment/CreateCheckoutSession', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                },
+                body: JSON.stringify(@Html.Raw(Json.Serialize(Model)))
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur réseau');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    window.location = data.url;
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert('Une erreur est survenue lors de l\'initialisation du paiement.');
+                    // Réactiver le bouton
+                    payButton.disabled = false;
+                    payButton.innerHTML = '<i class="fas fa-check me-2"></i>Payer';
+                });
+        }
+    </script>
+}
+
+@Html.AntiForgeryToken()
