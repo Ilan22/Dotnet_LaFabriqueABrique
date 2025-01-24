@@ -143,15 +143,15 @@ public static class DbInitializer
                 Price = 229.99M,
                 Age = 18,
                 NbPiece = 1920,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt1cedf079c8ffbe5e/42130_Prod.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt9d0e3378606e65e9/42130_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1","https://www.lego.com/cdn/cs/set/assets/bltd700d1de3f0e0ceb/42130_alt3.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Ferrari 812 Competizione",
                 Description = "Supercar Ferrari avec V12 atmosphérique",
-                Price = 239.99M,
-                Age = 18,
-                NbPiece = 1677,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                Price = 29.99M,
+                Age = 8,
+                NbPiece = 261,
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt4d8e5ab570296ac1/76914.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt06b91cf49ce34198/76914_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt3bd8eecbc03bbe0f/76914_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Pagani Utopia",
@@ -159,7 +159,7 @@ public static class DbInitializer
                 Price = 249.99M,
                 Age = 18,
                 NbPiece = 1815,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://m.media-amazon.com/images/I/71Q3PkE0GWL._AC_SY355_.jpg", "https://m.media-amazon.com/images/I/913W+XzAX4L._AC_SY355_.jpg", "https://m.media-amazon.com/images/I/81kb9JDC41L._AC_SY355_.jpg" }
             },
             new Lego {
                 Name = "Koenigsegg Jesko",
@@ -167,7 +167,7 @@ public static class DbInitializer
                 Price = 179.99M,
                 Age = 16,
                 NbPiece = 1280,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/bltc4ee2c0da944140f/42173.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt08a1312044632d19/42173_boxprod_v39_sha.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltcac1079cf10a1df0/42173_WEB_SEC03_NOBG.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Ducati Panigale V4 R",
@@ -175,7 +175,7 @@ public static class DbInitializer
                 Price = 69.99M,
                 Age = 18,
                 NbPiece = 646,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt37acd33d80d33837/42107.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt1304449e6366b5fb/42107_alt11.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt61ed62ce0e0f3eeb/42107_alt12.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Peugeot 9X8 Hybrid Hypercar",
@@ -183,23 +183,15 @@ public static class DbInitializer
                 Price = 199.99M,
                 Age = 18,
                 NbPiece = 1775,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt51a62f6f7514d31e/42156.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltee733e15dbb5a62f/42156_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt6ae88a9a016a8326/42156_alt10.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
-                Name = "Ford GT Heritage Edition",
+                Name = "Ford GT Heritage Edition et Bronco R",
                 Description = "Version spéciale de la Ford GT avec livrée Gulf",
-                Price = 119.99M,
-                Age = 18,
-                NbPiece = 1466,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Alpine A110",
-                Description = "Voiture de sport française légendaire",
-                Price = 89.99M,
-                Age = 16,
-                NbPiece = 1119,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                Price = 59.99M,
+                Age = 12,
+                NbPiece = 660,
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt28b1ed7beb2e5d7f/76905.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt15a612363696eab0/76905_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt08ca49fe33a1c4a8/76905_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Lotus Evija",
@@ -207,7 +199,7 @@ public static class DbInitializer
                 Price = 199.99M,
                 Age = 18,
                 NbPiece = 1789,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/bltc5ffb30fa56b54ad/76907.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blta92dfacca54b0ab4/76907_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt3651408da1aadb05/76907_alt4.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Porsche 963 LMDh",
@@ -215,7 +207,7 @@ public static class DbInitializer
                 Price = 229.99M,
                 Age = 18,
                 NbPiece = 1876,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt6cc4b8e0f29a4e0f/76916.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltab311109b1024f5c/76916_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltd5505d937f06f244/76916_alt4.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Audi RS Q e-tron",
@@ -223,7 +215,7 @@ public static class DbInitializer
                 Price = 199.99M,
                 Age = 18,
                 NbPiece = 1686,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt0307b21e401a1e7b/42160.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blte03638f5afbc9c03/42160_boxprod_v39.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1","https://www.lego.com/cdn/cs/set/assets/bltecc311e028085371/42160_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Yamaha MT-10 SP",
@@ -231,7 +223,7 @@ public static class DbInitializer
                 Price = 199.99M,
                 Age = 18,
                 NbPiece = 1478,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt5f2988ecb99157e2/42159.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt4a2856a67732f146/42159_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt844b0720877c5fc2/42159_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Batmobile Tumbler",
@@ -239,7 +231,7 @@ public static class DbInitializer
                 Price = 229.99M,
                 Age = 18,
                 NbPiece = 2049,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt755a6d05eac6630d/76240.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt1c14142c56a279d8/76240_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt1b2bb3f437596271/76240_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "DeLorean Time Machine",
@@ -247,7 +239,7 @@ public static class DbInitializer
                 Price = 169.99M,
                 Age = 18,
                 NbPiece = 1872,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt55fbccadb7d66885/10300.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltbe274579b9f81410/10300_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltbaff735c2e263c6f/10300_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Chevrolet Corvette C8.R",
@@ -255,55 +247,23 @@ public static class DbInitializer
                 Price = 179.99M,
                 Age = 18,
                 NbPiece = 1687,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/bltdf920b143d712ebc/76903.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltbb0d03467eaa0d6f/76903_box1_v39.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt22dbdad48869a538/76903_alt4.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Nissan GT-R Nismo",
                 Description = "Supercar japonaise avec détails moteur",
-                Price = 199.99M,
-                Age = 16,
-                NbPiece = 1590,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                Price = 24.99M,
+                Age = 7,
+                NbPiece = 298,
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt866c27d9dee0d44b/76896.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt0c7c9f0f79d836cf/76896_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltd71a8031f3e0befa/76896_alt3.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
-                Name = "Aprilia RSV4 Factory",
-                Description = "Superbike italienne de compétition",
-                Price = 189.99M,
-                Age = 18,
-                NbPiece = 1456,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Mercedes-AMG Project ONE",
+                Name = "Mercedes-AMG F1 W14 E Performance",
                 Description = "Hypercar hybride avec technologie F1",
-                Price = 399.99M,
-                Age = 18,
-                NbPiece = 3124,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Aston Martin Valkyrie",
-                Description = "Hypercar développée avec Red Bull Racing",
-                Price = 349.99M,
-                Age = 18,
-                NbPiece = 2678,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Maserati MC20",
-                Description = "Supercar italienne avec moteur Nettuno",
                 Price = 219.99M,
                 Age = 18,
-                NbPiece = 1789,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Château de Poudlard",
-                Description = "Le château emblématique de Harry Potter avec ses tours et ses salles magiques",
-                Price = 469.99M,
-                Age = 16,
-                NbPiece = 6020,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                NbPiece = 1643,
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt2d0b04908f20c4fb/42171.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltde770d06234b6a19/42171_boxprod_v39.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltfa4fa57d225a624f/42171_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Destroyer Stellaire Impérial",
@@ -311,7 +271,7 @@ public static class DbInitializer
                 Price = 699.99M,
                 Age = 18,
                 NbPiece = 4784,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt934044fa508776e2/75252.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt40f9e43bbfb9020b/75252_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt2b29c0aba14e5cf8/75252_alt4.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Daily Bugle",
@@ -319,7 +279,7 @@ public static class DbInitializer
                 Price = 349.99M,
                 Age = 18,
                 NbPiece = 3772,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/bltacb0c952668f6829/76178_Prod.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blteeb08eb498e43313/76178_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt9f305f3eecb794dc/76178_alt3.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Sanctum Sanctorum",
@@ -327,7 +287,7 @@ public static class DbInitializer
                 Price = 249.99M,
                 Age = 18,
                 NbPiece = 2708,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt5157080434f0c032/76218.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltd64880f2b886663a/76218_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blta20afa4f14db9f6b/76218_alt6.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Rivendell",
@@ -335,7 +295,7 @@ public static class DbInitializer
                 Price = 499.99M,
                 Age = 18,
                 NbPiece = 6167,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/bltec012c948c003fba/10316_alt16.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt33d693d46b4b5858/10316_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltf60debbc5b62ec15/10316_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Orchidée",
@@ -343,15 +303,7 @@ public static class DbInitializer
                 Price = 49.99M,
                 Age = 18,
                 NbPiece = 608,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Maison Victorienne",
-                Description = "Maison victorienne détaillée avec intérieur complet",
-                Price = 199.99M,
-                Age = 18,
-                NbPiece = 2923,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt08ea230311e717b8/10311.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltcff040178ae498a2/10311_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltf6ac21734e2ecee2/10311_alt3.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Station Spatiale ISS",
@@ -359,7 +311,7 @@ public static class DbInitializer
                 Price = 69.99M,
                 Age = 16,
                 NbPiece = 864,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt3777f348d7f98b8d/21321.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltbb6e3c005a0e09e3/21321_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blte6df7d0cf25fcd79/21321_alt2.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Taj Mahal",
@@ -367,7 +319,7 @@ public static class DbInitializer
                 Price = 119.99M,
                 Age = 18,
                 NbPiece = 2022,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt10cbc9ffc0459599/21056.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt7b728478abc1b1d9/21056_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltda58fab195872c05/21056_alt6.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Navire Viking",
@@ -375,7 +327,7 @@ public static class DbInitializer
                 Price = 199.99M,
                 Age = 18,
                 NbPiece = 1891,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt2ff2bbf69d86da41/31132.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt3dd16add35fa40d3/31132_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltb3ac7f3ef951694e/31132_alt3.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Jurassic Park T-Rex",
@@ -383,15 +335,15 @@ public static class DbInitializer
                 Price = 99.99M,
                 Age = 14,
                 NbPiece = 1212,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt11c914dd132fd9a8/76956.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt9ade5d146a40986a/76956_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blted2784640cc6f84b/76956_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
-                Name = "Télescope Spatial Hubble",
-                Description = "Réplique du célèbre télescope spatial",
+                Name = "La navette spatiale Discovery de la NASA",
+                Description = "Réplique de la célèbre navette spatiale Discovery",
                 Price = 199.99M,
                 Age = 18,
                 NbPiece = 2354,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/bltb4bcf59c441f048c/10283_Prod.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt9a603d53c81ac36a/10283_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltcca67c1f8dc499ab/10283_alt2.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Boutique de Jazz",
@@ -399,7 +351,7 @@ public static class DbInitializer
                 Price = 229.99M,
                 Age = 18,
                 NbPiece = 2899,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt354cdb9826736318/10312.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt5f0c85240fd502ed/10312_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltb687f42c1882cfd9/10312_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Pyramides de Gizeh",
@@ -407,15 +359,7 @@ public static class DbInitializer
                 Price = 129.99M,
                 Age = 18,
                 NbPiece = 1476,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Faucon de Combat Clone",
-                Description = "Vaisseau emblématique des Guerres des Clones",
-                Price = 139.99M,
-                Age = 14,
-                NbPiece = 1374,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt29a9be6d41806916/21058.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt5669621edd1b1595/21058_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltb5bf906fd70da364/21058_alt3.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Groot",
@@ -423,7 +367,7 @@ public static class DbInitializer
                 Price = 49.99M,
                 Age = 10,
                 NbPiece = 476,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt786d9a5e1bafd414/76217.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blt62056d2392a0ab87/76217_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltf66da9c039b84033/76217_alt3.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Bouquet de Roses",
@@ -431,7 +375,7 @@ public static class DbInitializer
                 Price = 59.99M,
                 Age = 18,
                 NbPiece = 822,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt08f4d88d801a4cf8/10328.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltfb61c1b2fca8aa4d/10328_alt1.jpg?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/blte7ed75db19d3a25c/10328_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Atari 2600",
@@ -439,15 +383,7 @@ public static class DbInitializer
                 Price = 239.99M,
                 Age = 18,
                 NbPiece = 2532,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
-            },
-            new Lego {
-                Name = "Panthéon de Rome",
-                Description = "Monument historique romain avec dôme détaillé",
-                Price = 149.99M,
-                Age = 18,
-                NbPiece = 1932,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt10c72e2ab2785ea4/10306.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltfe23f93b1245c20f/10306_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltd2f05a06e76ab754/10306_alt2.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             },
             new Lego {
                 Name = "Transformers Optimus Prime",
@@ -455,7 +391,7 @@ public static class DbInitializer
                 Price = 179.99M,
                 Age = 18,
                 NbPiece = 1508,
-                ImageUrls = new List<string> { "https://thumbs.dreamstime.com/b/timbre-de-travail-en-cours-dans-le-style-caoutchouc-102071784.jpg" }
+                ImageUrls = new List<string> { "https://www.lego.com/cdn/cs/set/assets/blt36fb03cdeb25ad1a/10302.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltd20fea4f0d6663c4/10302_alt1.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1", "https://www.lego.com/cdn/cs/set/assets/bltc5122f530cff0cd7/10302_alt4.png?format=webply&fit=bounds&quality=75&width=640&height=640&dpr=1" }
             }
         };
 

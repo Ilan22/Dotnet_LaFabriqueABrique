@@ -1,4 +1,8 @@
-﻿<div class="lego-container">
+﻿@{
+	ViewData["Title"] = "Ajouter un Lego";
+}
+
+<div class="lego-container">
 	<h2 class="lego-title">Ajouter un LEGO</h2>
 	
 	<form asp-action="CreateLego" asp-controller="Admin" method="post" class="lego-form">
