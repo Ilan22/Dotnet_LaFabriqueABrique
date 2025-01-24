@@ -45,8 +45,8 @@
                                     <td class="align-middle">@lego.Description</td>
                                     <td class="align-middle text-end">@lego.Price.ToString("C")</td>
                                     <td class="align-middle">
-                                        <form asp-controller="Cart" asp-action="Remove" method="post" class="d-inline">
-                                            <input type="hidden" name="id" value="@lego.Id" />
+                                        <form asp-controller="Store" asp-action="RemoveFromCart" method="post" class="d-inline">
+                                            <input type="hidden" name="legoId" value="@lego.Id" />
                                             <button type="submit" class="lego-button danger">
                                                 <i class="fas fa-trash"></i>
                                             </button>

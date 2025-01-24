@@ -78,34 +78,6 @@ namespace LaFabriqueaBriques.Controllers
             return RedirectToAction("Login");
         }
 
-        [HttpPost]
-        public IActionResult ConfirmOrder()
-        {
-            var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
-
-            if (string.IsNullOrEmpty(userEmail))
-                return Unauthorized();
-
-            var user = _context.Users
-                .Include(u => u.Cart)
-                .FirstOrDefault(u => u.Email == userEmail);
-
-            if (user == null || !user.Cart.Any())
-                return RedirectToAction("Profile", "Account");
-
-            var order = new Order
-            {
-                UserId = user.Id,
-                Legos = new List<Lego>(user.Cart)
-            };
-
-            _context.Orders.Add(order);
-            user.Cart.Clear();
-            _context.SaveChanges();
-
-            return RedirectToAction("Profile", "Account");
-        }
-
         public IActionResult Profile()
         {
             var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -151,7 +123,7 @@ namespace LaFabriqueaBriques.Controllers
             // Mise à jour du nom et de l'email
             if (Request.Form.TryGetValue("Name", out var nameValues))
                 user.Name = nameValues.ToString();
-            
+
             if (Request.Form.TryGetValue("Email", out var emailValues))
             {
                 var newEmail = emailValues.ToString();

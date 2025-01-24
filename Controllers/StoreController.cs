@@ -51,6 +51,31 @@ public class StoreController : Controller
         return RedirectToAction("Cart");
     }
 
+    [HttpPost]
+    public IActionResult RemoveFromCart(int legoId)
+    {
+        var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+
+        if (string.IsNullOrEmpty(userEmail))
+            return Unauthorized();
+
+        var user = _context.Users
+            .Include(u => u.Cart)
+            .FirstOrDefault(u => u.Email == userEmail);
+
+        if (user == null)
+            return Unauthorized();
+
+        var legoToRemove = user.Cart.FirstOrDefault(l => l.Id == legoId);
+        if (legoToRemove == null)
+            return NotFound();
+
+        user.Cart.Remove(legoToRemove);
+        _context.SaveChanges();
+
+        return RedirectToAction("Cart");
+    }
+
     public IActionResult Cart()
     {
         var userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
