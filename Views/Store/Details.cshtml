@@ -1,0 +1,83 @@
+﻿@model LaFabriqueaBriques.Models.Lego
+
+<div class="lego-container">
+    <div class="lego-header">
+        <h2 class="lego-title mb-0">@Model.Name</h2>
+        <div class="lego-header-buttons">
+            <a asp-action="Index" asp-controller="Home" class="lego-button">
+                <i class="fas fa-arrow-left"></i> Retour à la liste
+            </a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form asp-action="AddToCart" asp-controller="Store" method="post">
+                    <input type="hidden" name="legoId" value="@Model.Id" />
+                    <button type="submit" class="lego-button cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
+                </form>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="lego-button">
+                    <i class="fas fa-sign-in-alt"></i> Connectez-vous pour acheter
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="lego-details">
+        @if (Model.ImageUrls != null && Model.ImageUrls.Any())
+        {
+            <div class="lego-gallery">
+                <div class="lego-thumbnails">
+                    @foreach (var imageUrl in Model.ImageUrls)
+                    {
+                        <div class="thumbnail-container" onclick="changeMainImage('@imageUrl')">
+                            <img src="@imageUrl" class="thumbnail-image" alt="Miniature LEGO" />
+                        </div>
+                    }
+                </div>
+                <div class="lego-main-image">
+                    <img src="@Model.ImageUrls.First()" id="mainImage" alt="Image principale LEGO" />
+                </div>
+            </div>
+        }
+
+        <div class="lego-info">
+            <div class="lego-description">
+                <h3><i class="fas fa-info-circle"></i> Description</h3>
+                <p>@Model.Description</p>
+            </div>
+
+            <div class="lego-specs-details">
+                <div class="spec-item">
+                    <i class="fas fa-coins"></i>
+                    <span class="spec-label">Prix :</span>
+                    <span class="spec-value">@Model.Price €</span>
+                </div>
+
+                <div class="spec-item">
+                    <i class="fas fa-child"></i>
+                    <span class="spec-label">Âge recommandé :</span>
+                    <span class="spec-value">@Model.Age ans</span>
+                </div>
+
+                <div class="spec-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span class="spec-label">Nombre de pièces :</span>
+                    <span class="spec-value">@Model.NbPiece pièces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    function changeMainImage(imageUrl) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageUrl;
+        mainImage.style.opacity = '0';
+        setTimeout(() => {
+            mainImage.style.opacity = '1';
+        }, 100);
+    }
+</script>

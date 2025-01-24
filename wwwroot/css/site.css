@@ -8,7 +8,11 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -21,11 +25,588 @@ body {
   margin-bottom: 60px;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+.lego-nav {
+  background: #f8f9fa;
+  padding: 1rem;
+  box-shadow: 0 4px 0 0 #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.lego-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lego-button {
+  background: #ffcf00;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 8px;
+  box-shadow: 0 4px 0 0 #e0b500;
+  transition: all 0.2s ease;
+}
+
+.lego-button:hover {
+  background: #ffd700;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 #e0b500;
+  color: #333;
+  text-decoration: none;
+}
+
+    .lego-button.admin {
+        background: #ff4444;
+        box-shadow: 0 4px 0 0 #cc0000;
+    }
+
+.lego-button.admin:hover {
+  background: #ff6666;
+  box-shadow: 0 2px 0 0 #cc0000;
+}
+
+    .lego-button.cart {
+        background: #44A5EE;
+        box-shadow: 0 4px 0 0 #327eb8;
+    }
+
+        .lego-button.cart:hover {
+            background: #327eb8;
+            box-shadow: 0 2px 0 0 #2a6b9c;
+        }
+
+.user-welcome {
+  font-weight: bold;
+  color: #333;
+  margin-right: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.lego-container {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lego-title {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lego-subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.lego-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.lego-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 0 0 #e0e0e0;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.lego-card:hover {
+  transform: translateY(-5px);
+}
+
+.lego-card-header {
+  background: #ffcf00;
+  padding: 1rem;
+  color: #333;
+}
+
+.lego-card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.lego-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lego-card-image {
+  height: 15em;
+  width: 15em;
+  object-fit: contain;
+}
+
+.lego-specs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.lego-specs span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.admin-actions .lego-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Styles pour le formulaire LEGO */
+.lego-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.lego-form .form-label {
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lego-form .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.lego-form .form-control:focus {
+  border-color: #ffcf00;
+  box-shadow: 0 0 0 0.2rem rgba(255, 207, 0, 0.25);
+}
+
+.lego-form .text-muted {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Styles pour la page de confidentialité */
+.privacy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+}
+
+.privacy-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Styles pour la table de gestion des utilisateurs */
+.lego-table-container {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+.lego-table-header {
+  background: #ffcf00;
+  color: #333;
+}
+
+.table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem;
+  border: none;
+}
+
+.table td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-color: #e0e0e0;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.role-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.role-select {
+  max-width: 150px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.role-select:focus {
+  border-color: #ffcf00;
+  box-shadow: 0 0 0 0.2rem rgba(255, 207, 0, 0.25);
+}
+
+.table .lego-button {
+  padding: 6px 12px;
+  margin: 0;
+}
+
+.table i {
+  color: #666;
+  width: 16px;
+  text-align: center;
+}
+
+/* Styles pour les formulaires d'authentification */
+.auth-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 0 0 #e0e0e0;
+}
+
+.auth-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.auth-form .form-label {
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-form .form-label i {
+  color: #ffcf00;
+  width: 20px;
+  text-align: center;
+}
+
+.auth-form .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.auth-form .form-control:focus {
+  border-color: #ffcf00;
+  box-shadow: 0 0 0 0.2rem rgba(255, 207, 0, 0.25);
+}
+
+.auth-form .lego-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+}
+
+.auth-form .lego-button i {
+  margin-right: 8px;
+}
+
+/* Message d'erreur pour les formulaires */
+.auth-form .validation-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-form .validation-message i {
+  font-size: 1rem;
+}
+
+/* Liens supplémentaires */
+.auth-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.auth-links a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.auth-links a:hover {
+  color: #ffcf00;
+}
+
+/* Styles pour la page de détails LEGO */
+.lego-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .lego-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lego-images {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.lego-image-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 0 0 #e0e0e0;
+  background: white;
+  transition: transform 0.2s ease;
+}
+
+.lego-image-container:hover {
+  transform: translateY(-5px);
+}
+
+.lego-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lego-info {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 0 0 #e0e0e0;
+}
+
+.lego-description {
+  margin-bottom: 2rem;
+}
+
+.lego-description h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lego-description h3 i {
+  color: #ffcf00;
+}
+
+.lego-description p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.lego-specs-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.spec-item i {
+  color: #ffcf00;
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.spec-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.spec-value {
+  margin-left: auto;
+  color: #666;
+}
+
+.lego-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles pour la galerie d'images */
+.lego-gallery {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.lego-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 150px;
+  flex-shrink: 0; /* Empêche la colonne de rétrécir */
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.thumbnail-container {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0; /* Empêche les miniatures de rétrécir */
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.thumbnail-container:hover {
+  border-color: #ffcf00;
+  transform: translateY(-2px);
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lego-main-image {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start; /* Aligne l'image en haut */
+  min-width: 0; /* Permet à l'image de rétrécir correctement */
+}
+
+.lego-main-image img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+/* Style pour la barre de défilement des miniatures */
+.lego-thumbnails::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lego-thumbnails::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.lego-thumbnails::-webkit-scrollbar-thumb {
+  background: #ffcf00;
+  border-radius: 3px;
+}
+
+.lego-thumbnails::-webkit-scrollbar-thumb:hover {
+  background: #e0b500;
+}
+
+/* Mise à jour des styles pour la page détails */
+.lego-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.lego-header .lego-title {
+  margin: 0;
+  text-align: left;
+}
+
+.lego-info {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.logo {
+    height: 3em;
+    width: auto;
+}
+
+.lego-header-buttons{
+    display: flex;
 }

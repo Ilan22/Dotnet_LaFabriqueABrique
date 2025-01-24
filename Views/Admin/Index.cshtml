@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Panel de contrôle Admin";
+}
+
+<div class="lego-container">
+    <h2 class="lego-title">Panel de contrôle Admin</h2>
+    <p class="lego-subtitle">Bienvenue dans le panneau d'administration.</p>
+    
+    <div class="admin-actions">
+        <a asp-controller="Admin" asp-action="CreateLego" class="lego-button">
+            <i class="fas fa-plus"></i> Ajouter un LEGO
+        </a>
+        <a asp-controller="Admin" asp-action="ManageUsers" class="lego-button">
+            <i class="fas fa-users"></i> Gérer les utilisateurs
+        </a>
+    </div>
+</div>

@@ -1,12 +1,31 @@
-﻿<h2>Connexion</h2>
-<form asp-action="Login" method="post">
-    <div>
-        <label for="Email">Email</label>
-        <input type="email" name="email" />
-    </div>
-    <div>
-        <label for="Password">Mot de passe</label>
-        <input type="password" name="password" />
-    </div>
-    <button type="submit">Se connecter</button>
-</form>
+﻿@model LaFabriqueaBriques.Models.User
+
+<div class="lego-container">
+    <h2 class="lego-title">Connexion</h2>
+    
+    <form asp-action="Login" method="post" class="lego-form auth-form">
+        <div class="form-group mb-3">
+            <label for="Email" class="form-label">
+                <i class="fas fa-envelope"></i> Email
+            </label>
+            <input type="email" class="form-control" asp-for="Email" required />
+        </div>
+        
+        <div class="form-group mb-3">
+            <label for="Password" class="form-label">
+                <i class="fas fa-lock"></i> Mot de passe
+            </label>
+            <input type="password" class="form-control" asp-for="Password" required />
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="lego-button">
+                <i class="fas fa-sign-in-alt"></i> Se connecter
+            </button>
+        </div>
+
+        <div class="auth-links">
+            <a asp-controller="Account" asp-action="Register">Pas encore de compte ? S'inscrire</a>
+        </div>
+    </form>
+</div>

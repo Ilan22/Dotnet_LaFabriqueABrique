@@ -1,0 +1,46 @@
+﻿@model LaFabriqueaBriques.Models.AdminUserViewModel
+
+<div class="lego-container">
+    <h2 class="lego-title">Gestion des utilisateurs</h2>
+    
+    <div class="lego-table-container">
+        <table class="table table-hover">
+            <thead class="lego-table-header">
+                <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>
+                            <i class="fas fa-user"></i>
+                            <span class="ms-2">@user.Name</span>
+                        </td>
+                        <td>
+                            <i class="fas fa-envelope"></i>
+                            <span class="ms-2">@user.Email</span>
+                        </td>
+                        <td>
+                            <form asp-action="ChangeRole" method="post" class="role-form">
+                                <input type="hidden" name="id" value="@user.Id" />
+                                <div class="d-flex align-items-center gap-2">
+                                    <select name="role" class="form-control role-select">
+                                        <option value="0" selected="@(user.Role == 0)">Utilisateur</option>
+                                        <option value="1" selected="@(user.Role == 1)">Administrateur</option>
+                                    </select>
+                                    <button type="submit" class="lego-button">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

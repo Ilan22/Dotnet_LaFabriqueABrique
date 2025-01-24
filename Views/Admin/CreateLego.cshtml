@@ -1,0 +1,60 @@
+﻿<div class="lego-container">
+	<h2 class="lego-title">Ajouter un LEGO</h2>
+	
+	<form asp-action="CreateLego" asp-controller="Admin" method="post" class="lego-form">
+		<div class="form-group mb-3">
+			<label for="Name" class="form-label">
+				<i class="fas fa-cube"></i> Nom :
+			</label>
+			<input type="text" class="form-control" id="Name" name="Name" required />
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="Description" class="form-label">
+				<i class="fas fa-align-left"></i> Description :
+			</label>
+			<textarea class="form-control" id="Description" name="Description" rows="3" required></textarea>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="ImageUrlsInput" class="form-label">
+				<i class="fas fa-images"></i> URL des Images :
+			</label>
+			<textarea class="form-control" id="ImageUrlsInput" name="ImageUrlsInput" rows="3"></textarea>
+			<small class="form-text text-muted">Séparez les URLs par des espaces ou des nouvelles lignes.</small>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="Price" class="form-label">
+				<i class="fas fa-tag"></i> Prix :
+			</label>
+			<input type="text" class="form-control" id="Price" name="Price" oninput="formatDecimal(this)" required />
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="Age" class="form-label">
+				<i class="fas fa-child"></i> Âge :
+			</label>
+			<input type="number" class="form-control" id="Age" name="Age" required />
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="NbPiece" class="form-label">
+				<i class="fas fa-puzzle-piece"></i> Nombre de pièces :
+			</label>
+			<input type="number" class="form-control" id="NbPiece" name="NbPiece" required />
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="lego-button">
+				<i class="fas fa-plus"></i> Créer LEGO
+			</button>
+		</div>
+	</form>
+</div>
+
+<script>
+	function formatDecimal(input) {
+		input.value = input.value.replace('.', ',');
+	}
+</script>
