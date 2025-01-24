@@ -6,18 +6,24 @@
 
 <div class="lego-container">
     <h2 class="lego-title">Nos Sets LEGO</h2>
-    
+
     <div class="filter-section">
-        <label for="sortCriteria">Trier par :</label>
-        <select id="sortCriteria" onchange="sortLegos(this.value)">
-            <option value="">Sélectionner...</option>
-            <option value="name-asc">Nom (A-Z)</option>
-            <option value="name-desc">Nom (Z-A)</option>
-            <option value="price-asc">Prix (croissant)</option>
-            <option value="price-desc">Prix (décroissant)</option>
-            <option value="pieces-asc">Nombre de pièces (croissant)</option>
-            <option value="pieces-desc">Nombre de pièces (décroissant)</option>
-        </select>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Rechercher par nom..." onkeyup="searchLegos(this.value)">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="sort-box">
+            <label for="sortCriteria">Trier par :</label>
+            <select id="sortCriteria" onchange="sortLegos(this.value)">
+                <option value="">Sélectionner...</option>
+                <option value="name-asc">Nom (A-Z)</option>
+                <option value="name-desc">Nom (Z-A)</option>
+                <option value="price-asc">Prix (croissant)</option>
+                <option value="price-desc">Prix (décroissant)</option>
+                <option value="pieces-asc">Nombre de pièces (croissant)</option>
+                <option value="pieces-desc">Nombre de pièces (décroissant)</option>
+            </select>
+        </div>
     </div>
 
     <div class="lego-grid">
@@ -34,7 +40,8 @@
                         <span><i class="fas fa-child"></i> @lego.Age ans</span>
                         <span><i class="fas fa-puzzle-piece"></i> @lego.NbPiece pièces</span>
                     </div>
-                    <a asp-controller="Store" asp-action="Details" asp-route-id="@lego.Id" class="lego-button">Voir les détails</a>
+                    <a asp-controller="Store" asp-action="Details" asp-route-id="@lego.Id" class="lego-button">Voir les
+                        détails</a>
                 </div>
             </div>
         }
@@ -42,23 +49,32 @@
 </div>
 
 <script>
-function sortLegos(criteria) {
-    const url = new URL(window.location);
-    url.searchParams.set('sort', criteria);
-    window.location.href = url;
-}
+    function sortLegos(criteria) {
+        const url = new URL(window.location);
+        url.searchParams.set('sort', criteria);
+        window.location.href = url;
+    }
+
+    function searchLegos(searchTerm) {
+        searchTerm = searchTerm.toLowerCase();
+        const legoCards = document.querySelectorAll('.lego-card');
+
+        legoCards.forEach(card => {
+            const legoName = card.querySelector('h3').textContent.toLowerCase();
+            if (legoName.includes(searchTerm)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Ajout d'un délai pour optimiser la recherche
+    let searchTimeout;
+    document.getElementById('searchInput').addEventListener('input', function (e) {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            searchLegos(e.target.value);
+        }, 300);
+    });
 </script>
-
-<style>
-.filter-section {
-    margin: 20px 0;
-    text-align: right;
-}
-
-.filter-section select {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    margin-left: 10px;
-}
-</style>
